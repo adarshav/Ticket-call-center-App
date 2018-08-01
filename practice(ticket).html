@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ticket Master</title>
+</head>
+<body>
+    <h2>Ticket Master Call Center App</h2>
+    <h3>ListingTickets-</h3><span id="count"></span>
+    <select name="" id="select">
+        <option value="all">All</option>
+        <option value="high">High</option>
+        <option value="medium">Medium</option>
+        <option value="low">Low</option>
+    </select>
+    <input type="text" id="search" placeholder="search By Code">
+
+    <!-- <button id="all">All</button>
+    <button id="high">High</button>
+    <button id="medium">Medium</button>
+    <button id="low">Low</button> -->
+
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Code</th>
+                <th>Name</th>
+                <th>Department</th>
+                <th>Priority</th>
+                <th>Message</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody id="tableBody"></tbody>
+    </table>
+
+    <fieldset>
+        <form id="ticketForm">
+            <!-- name text box -->
+            <label for="name">Name</label><input type="text" id="name">
+            <br>
+
+            <!-- department textbox -->
+            <label for="department">Department</label>
+            <select name="department" id="department">
+                <option value="">Select</option>
+                <option value="technical">Technical</option>
+                <option value="sales">Sales</option>
+                <option value="hr">HR</option>
+            </select>
+            <br>
+            <!-- priority radio button -->
+            <label>Priority</label>
+            <input type="radio" name="priority" id="high" value="high"><label for="high">High</label>
+            <input type="radio" name="priority" id="medium" value="medium"><label for="medium">Medium</label>
+            <input type="radio" name="priority" id="low" value="low"><label for="low">Low</label>
+            <br>
+
+            <!-- message box -->
+            <label for="message">Message</label>
+            <textarea name="message" id="message"></textarea>
+            <br>
+
+            <input type="submit" value="submit">
+            <input type="reset">
+        </form>
+    </fieldset>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="./practice(ticket).js"></script>
+</body>
+</html>

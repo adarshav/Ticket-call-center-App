@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>My Book List</title>
+</head>
+<body>
+    <h2>My Book List</h2>
+    <div id="book"></div>
+    <script>
+        var books = [
+        {
+            title: 'The Design of EveryDay Things',
+            img: 'http://ecx.images-amazon.com/images/I/41j2ODGkJDL._AA115_.jpg',
+            author: 'Don Norman',
+            alreadyRead: false
+        },
+        {
+            title: 'The Most Human Human',
+            img: 'http://ecx.images-amazon.com/images/I/41Z56GwEv9L._AA115_.jpg',
+            author: 'Brian Christian',
+            alreadyRead: true
+        }];
+
+        var bookHandle = document.getElementById('book');
+        books.forEach(function(book) {
+            var p = document.createElement('p');
+            var ul = document.createElement('ul');
+            var li = document.createElement('li');
+            console.log(li);
+
+            var liText = document.createTextNode(book.title);
+            li.appendChild(liText);
+
+            var pText = document.createTextNode(book.author);
+            p.appendChild(pText);
+
+            li.appendChild(p);
+
+            var img = document.createElement('img');
+            console.log(img);
+            img.src = book.img;
+
+            ul.appendChild(li);
+            ul.appendChild(img);
+            bookHandle.appendChild(ul);
+            if(book.alreadyRead === true) {
+                li.setAttribute("style", "color:red");
+            }
+
+        });
+        
+    </script>
+</body>
+</html>
